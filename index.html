@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Enfield - Engineering. Reassembled.</title>
+    
+    <!-- Meta Descriptions for SEO -->
+    <meta name="description" content="An immersive, scroll-controlled interactive product reveal of the legendary Royal Enfield motorcycle. Experience engineering reassembled.">
+    
+    <!-- Google Fonts: Outfit for luxury display, Inter for body and labels -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Cache-busted Stylesheet Link -->
+    <link rel="stylesheet" href="style.css?v=2.0">
+</head>
+<body class="loading">
+
+    <!-- Premium Dark Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="loader-logo">ROYAL ENFIELD</div>
+            <div class="loader-percentage" id="loader-percentage">00 %</div>
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="loader-bar"></div>
+            </div>
+            <div class="loader-status">PRELOADING SYSTEM SCHEMATICS...</div>
+        </div>
+    </div>
+
+    <!-- Smooth scroll wrapper for Lenis -->
+    <div id="smooth-wrapper">
+        
+        <!-- INTRO HERO SECTION (Normal Flow, 100vh) -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">ROYAL ENFIELD</h1>
+                <p class="hero-subtitle">Engineering. Reassembled.</p>
+            </div>
+            
+            <!-- Animated scroll down indicator -->
+            <div class="scroll-indicator" id="scroll-indicator">
+                <span class="scroll-indicator-text">Scroll Down</span>
+                <div class="scroll-arrow">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAIN SCROLL ANIMATION CONTAINER -->
+        <div class="scroll-wrapper" id="scroll-trigger-area">
+            
+            <!-- Pinned Canvas Container -->
+            <div class="canvas-container" id="canvas-container">
+                
+                <canvas id="motorcycle-canvas"></canvas>
+                
+                <!-- Floating Cinematic Specs during assembly -->
+                <div class="cinematic-copy-overlay">
+                    <div class="cinematic-step" id="step-1">
+                        <span class="step-num">01 / 03</span>
+                        <h2>THE ANATOMY OF MOTION</h2>
+                        <p>349cc air-oil cooled single-cylinder core, reengineered for seamless power delivery.</p>
+                    </div>
+                    <div class="cinematic-step" id="step-2">
+                        <span class="step-num">02 / 03</span>
+                        <h2>SCULPTED INTEGRITY</h2>
+                        <p>A classic silhouette refined with hand-polished metallic surfaces and fluid ergonomics.</p>
+                    </div>
+                    <div class="cinematic-step" id="step-3">
+                        <span class="step-num">03 / 03</span>
+                        <h2>THE COMPLETED LEGEND</h2>
+                        <p>Every bolt, spring, and panel in absolute harmony. Ready for the road ahead.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- SPECIFICATIONS GRID (UNPINNED SECTION) -->
+        <section class="specs-section" id="specs-section">
+            <div class="container">
+                <div class="specs-header">
+                    <span class="section-tag">Anatomy of Power</span>
+                    <h2 class="section-title">The Engineering Specifications</h2>
+                    <p class="section-subtitle">Every element refined, calibrated, and reassembled to perfection.</p>
+                </div>
+                
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">349 cc</div>
+                        <div class="spec-label">Displacement</div>
+                        <div class="spec-description">Single cylinder, 4-stroke, air-oil cooled engine generating effortless low-end torque.</div>
+                    </div>
+                    
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">20.2 BHP</div>
+                        <div class="spec-label">Maximum Power</div>
+                        <div class="spec-description">Delivered smoothly at 6,100 rpm, optimized for refined highway cruising and city runs.</div>
+                    </div>
+                    
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 11-.57-8.38l5.67-5.67" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">27 Nm</div>
+                        <div class="spec-label">Peak Torque</div>
+                        <div class="spec-description">Heavy hitting bottom-end torque @ 4,000 rpm, retaining the classic Enfield thrum.</div>
+                    </div>
+                    
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M9 3v18M15 3v18M3 9h18M3 15h18" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">Twin Spine</div>
+                        <div class="spec-label">Chassis Type</div>
+                        <div class="spec-description">Twin downtube spine frame provides unmatched stability, chassis stiffness and confidence.</div>
+                    </div>
+                    
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">Dual Channel</div>
+                        <div class="spec-label">ABS System</div>
+                        <div class="spec-description">300mm front disc and 270mm rear disc brakes, coupled with advanced ABS safety.</div>
+                    </div>
+                    
+                    <div class="spec-card">
+                        <div class="spec-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+                            </svg>
+                        </div>
+                        <div class="spec-value">13.0 L</div>
+                        <div class="spec-label">Fuel Capacity</div>
+                        <div class="spec-description">Generous tear-drop shaped tank allowing long-distance touring without interruptions.</div>
+                    </div>
+                </div>
+                
+                <!-- CTA / Premium Action Block -->
+                <div class="cta-block">
+                    <div class="cta-content">
+                        <h3>Reassemble Your Journey</h3>
+                        <p>Experience the precision, hear the heartbeat, and command the road.</p>
+                        <a href="#" class="btn-primary" id="cta-button">
+                            <span>Book a Test Ride</span>
+                            <svg class="btn-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="footer-logo">ROYAL ENFIELD</div>
+                        <p>Engineering. Reassembled.</p>
+                    </div>
+                    <div class="footer-links">
+                        <div class="links-column">
+                            <h4>Motorcycles</h4>
+                            <a href="#">Classic 350</a>
+                            <a href="#">Hunter 350</a>
+                            <a href="#">Meteor 350</a>
+                            <a href="#">Himalayan</a>
+                        </div>
+                        <div class="links-column">
+                            <h4>Experience</h4>
+                            <a href="#">Rides & Events</a>
+                            <a href="#">Our Story</a>
+                            <a href="#">Custom World</a>
+                            <a href="#">Garages</a>
+                        </div>
+                        <div class="links-column">
+                            <h4>Legal</h4>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms & Conditions</a>
+                            <a href="#">Cookie Settings</a>
+                            <a href="#">Accessibility</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Royal Enfield. Built with precision and passion.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- THIRD-PARTY LIBRARIES (CDNs) -->
+    <!-- GSAP Core & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Lenis for smooth kinetic scroll interpolation -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- Cache-busted Main Logic Script -->
+    <script src="main.js?v=2.0"></script>
+</body>
+</html>
