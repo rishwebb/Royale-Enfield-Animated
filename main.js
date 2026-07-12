@@ -136,17 +136,23 @@ window.addEventListener('DOMContentLoaded', () => {
         const imgWidth = img.width || 1280;
         const imgHeight = img.height || 720;
 
-        // Maintain "cover" aspect ratio so it spans edge-to-edge
+        // Maintain optimal sizing for the device
         const containerRatio = logicalWidth / logicalHeight;
         const imgRatio = imgWidth / imgHeight;
+        const isMobile = window.innerWidth <= 768;
 
         let scale;
-        if (containerRatio > imgRatio) {
-            // Screen is wider than the image ratio, scale by width to cover
-            scale = logicalWidth / imgWidth;
+        if (isMobile) {
+            // On mobile, contain the width so the entire bike is visible without chopping
+            scale = (logicalWidth / imgWidth) * 1.1; 
         } else {
-            // Screen is taller than the image ratio, scale by height to cover
-            scale = logicalHeight / imgHeight;
+            if (containerRatio > imgRatio) {
+                // Screen is wider than the image ratio, scale by width to cover
+                scale = logicalWidth / imgWidth;
+            } else {
+                // Screen is taller than the image ratio, scale by height to cover
+                scale = logicalHeight / imgHeight;
+            }
         }
 
         const w = imgWidth * scale;
@@ -156,19 +162,21 @@ window.addEventListener('DOMContentLoaded', () => {
         const x = (logicalWidth - w) / 2;
         const y = (logicalHeight - h) / 2;
 
-        // Paint dynamic background radial gradient (prevents visual bounds clipping)
-        const radialGradient = ctx.createRadialGradient(
-            logicalWidth / 2, logicalHeight / 2, 0,
-            logicalWidth / 2, logicalHeight / 2, Math.max(logicalWidth, logicalHeight)
-        );
-        radialGradient.addColorStop(0, '#E5E5E5');
-        radialGradient.addColorStop(1, '#D4D4D4');
-
-        ctx.fillStyle = radialGradient;
-        ctx.fillRect(0, 0, logicalWidth, logicalHeight);
+        ctx.clearRect(0, 0, logicalWidth, logicalHeight);
 
         // Draw image frame
         ctx.drawImage(img, x, y, w, h);
+
+        // Fill top/bottom gaps on mobile devices by stretching the top/bottom 1-pixel edge of the image
+        // This creates a perfectly seamless background without triggering CORS file:/// restrictions!
+        if (y > 0) {
+            // Stretch top edge upwards
+            ctx.drawImage(img, 0, 0, imgWidth, 1, 0, 0, logicalWidth, Math.ceil(y) + 1);
+        }
+        if (y + h < logicalHeight) {
+            // Stretch bottom edge downwards
+            ctx.drawImage(img, 0, imgHeight - 1, imgWidth, 1, 0, Math.floor(y + h) - 1, logicalWidth, logicalHeight - (y + h) + 2);
+        }
 
         renderState.lastRenderedFrameIndex = frameIndex;
     }
